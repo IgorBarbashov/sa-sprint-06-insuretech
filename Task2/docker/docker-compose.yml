@@ -1,0 +1,23 @@
+services:
+  scaletest-app:
+    container_name: scaletest-app
+    image: shestera/scaletestapp
+    ports:
+      - 8081:8080
+    networks:
+      - scaletest-network
+
+#  scaletest-kuber:
+#    container_name: scaletest-kuber
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
+#    ports:
+#      - 8089:8089
+#      - 5557:5557
+#    networks:
+#      - scaletest-network
+
+networks:
+  scaletest-network:
+    driver: bridge
